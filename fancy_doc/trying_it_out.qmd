@@ -1,0 +1,20 @@
+---
+title: "Annotated bibliography:"
+subtitle: "Party branding"
+author:
+    - name: "Damon C. Roberts"
+      email: damon.charles.roberts@gmail.com
+      affiliations:
+        - id: CU
+          name: University of Colorado Boulder
+#bibliography:
+format:
+    pdf:
+        template: fancy_doc_template.tex
+        cite-method: biblatex
+        keep-tex: true
+---
+
+# General
+
+This is my general impression of the literature on party branding.

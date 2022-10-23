@@ -1,0 +1,35 @@
+\documentclass[12pt]{article}%specify document class
+\usepackage{hyperref}%for referencing and cross-referencing
+\usepackage{setspace}%for spacing of lines
+\usepackage[margin=1.2in]{geometry}% for dealing with margins
+\usepackage{fancyhdr}%for the headers
+\usepackage[english]{babel}%for specifying english
+\usepackage[style=apa, backend=biber]{biblatex}%for bibliography
+\addbibresource{}%accessing the bilbiography file specified in the qmd
+\pagestyle{fancy}%specifying the type of page
+\setlength{\headheight}{38pt}%set the header size
+\usepackage{xcolor}%for adding some nice colors to the hyperrefs
+\hypersetup{
+    colorlinks,
+    linkcolor={blue!50!blue},
+    citecolor={blue!50!blue},
+    urlcolor={blue!80!blue}
+}
+\usepackage{pdfpages}%to include pdfs
+\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}%to add the bar under the header
+\def\tightlist{}%to create an emptymacro to deal with pandoc's weird way of handling lists
+
+\begin{document}
+
+\lhead{Damon C. Roberts \\ University of Colorado
+Boulder  \\ \url{damon.charles.roberts@gmail.com}} 
+\rhead{Annotated bibliography: \\ Party branding \\ \today}
+
+\cfoot{\thepage}
+
+\hypertarget{general}{%
+\section{General}\label{general}}
+
+This is my general impression of the literature on party branding.
+
+\end{document}
