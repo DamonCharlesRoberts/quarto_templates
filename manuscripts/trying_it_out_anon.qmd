@@ -1,0 +1,28 @@
+---
+title: "APSR Template in Quarto"
+author: 
+    - name: Damon C. Roberts
+      email: damon.roberts-1@colorado.edu
+      orcid: 0000-0002-4360-3675
+      corresponding: true
+      affiliations:
+        - id: cu
+          name: University of Colorado Boulder
+nonblind: blind
+repo: https://github.com/DamonCharlesRoberts
+abstract: |
+  This is an adjustment to the APSR template to work in Quarto.
+format: 
+    pdf:
+        template: apsr_template.tex
+        cite-method: biblatex
+        keep-tex: true
+        block-headings: true
+#bibliography:
+thanks: |
+  Thank you APSR folks!
+---
+
+# Introduction
+
+This uses the APSR submission CLS file. It also adjusts the APSR LaTeX file for use in Quarto.
