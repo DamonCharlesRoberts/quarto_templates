@@ -1,13 +1,13 @@
 <h4 align="center">Quarto Templates</h4>
 <p align="center">
-    <a href="https://github.com/DamonCharlesRoberts/imputation-with-random-forests/commits/main">
-    <img src="https://img.shields.io/github/last-commit/DamonCharlesRoberts/imputation-with-random-forests.svg?style=flat-square&logo=github&logoColor=white"
+    <a href="https://github.com/DamonCharlesRoberts/quarto_templates/commits/main">
+    <img src="https://img.shields.io/github/last-commit/DamonCharlesRoberts/quarto_templates.svg?style=flat-square&logo=github&logoColor=white"
          alt="GitHub last commit"></a>
-    <a href="https://github.com/DamonCharlesRoberts/imputation-with-random-forests/issues">
-    <img src="https://img.shields.io/github/issues-raw/DamonCharlesRoberts/imputation-with-random-forests.svg?style=flat-square&logo=github&logoColor=white"
+    <a href="https://github.com/DamonCharlesRoberts/quarto_templates/issues">
+    <img src="https://img.shields.io/github/issues-raw/DamonCharlesRoberts/quarto_templates.svg?style=flat-square&logo=github&logoColor=white"
          alt="GitHub issues"></a>
-    <a href="https://github.com/DamonCharlesRoberts/imputation-with-random-forests/pulls">
-    <img src="https://img.shields.io/github/issues-pr-raw/DamonCharlesRoberts/imputation-with-random-forests.svg?style=flat-square&logo=github&logoColor=white"
+    <a href="https://github.com/DamonCharlesRoberts/quarto_templates/pulls">
+    <img src="https://img.shields.io/github/issues-pr-raw/DamonCharlesRoberts/quarto_templates.svg?style=flat-square&logo=github&logoColor=white"
          alt="GitHub pull requests"></a>
 </p>
 
