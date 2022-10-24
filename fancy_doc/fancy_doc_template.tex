@@ -5,6 +5,15 @@
 \usepackage{fancyhdr}%for the headers
 \usepackage[english]{babel}%for specifying english
 \usepackage[style=apa, backend=biber]{biblatex}%for bibliography
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+      \step[fieldsource=annote, null]
+      \step[fieldset=annote, null]
+      \step[fieldset=annote, null]
+    }
+  }
+} % ignore annote field
 \addbibresource{$for(bibliography)$$bibliography$$endfor$}%accessing the bilbiography file specified in the qmd
 \pagestyle{fancy}%specifying the type of page
 \setlength{\headheight}{38pt}%set the header size
