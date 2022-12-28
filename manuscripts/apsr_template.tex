@@ -28,9 +28,17 @@
 %%% enable it when you're ready to take stock and check
 %%% on your work.
 $if(nonblind)$
-    \documentclass[biblatex,$nonblind$]{apsr_submission}
+    $if(params.os)$
+    \documentclass[biblatex,$nonblind$]{C:/Users/damon/Dropbox/templates/manuscripts/apsr_submission}
+    $else$
+    \documentclass[biblatex,$nonblind$]{/home/damoncroberts/Dropbox/templates/manuscripts/apsr_submission}
+    $endif$
 $else$
-    \documentclass[biblatex]{apsr_submission}
+    $if(params.os)$
+    \documentclass[biblatex,$nonblind$]{C:/Users/damon/Dropbox/templates/manuscripts/apsr_submission}
+    $else$
+    \documentclass[biblatex]{/home/damoncroberts/Dropbox/templates/manuscripts/apsr_submission}
+    $endif$
 $endif$
 \RequirePackage{hyperref}
 \hypersetup{
