@@ -1,0 +1,23 @@
+---
+name: "Big bird"
+address:
+    - address: "123 Seseme Street"
+    - city: "New York City"
+    - state: "NY"
+    - postal: "12345"
+email: "FAKE.EMAIL@GMAIL.COM"
+website: "pbs.org"
+format:
+    pdf:
+        template: "cv_template.tex"
+---
+
+# Postions
+
+## Current
+
+The *real* star of the show.
+
+## Former
+
+A star of the show.

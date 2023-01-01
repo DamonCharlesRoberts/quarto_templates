@@ -1,0 +1,26 @@
+---
+format:
+    pdf:
+        template: syllabus_template.tex
+title: |
+    Anthropology 101
+subtitle: |
+    How to obtain relics
+instructor:
+    name: Indiana Jones
+    email: ??
+meeting:
+    days: "Depends... usually out of town"
+    time: "Not sure"
+    building: "Undisclosed"
+    room: "Undisclosed"
+oh:
+    days: "HA!"
+    time: "12-1P.M"
+    building: "Window"
+    room: "Don't bother"
+---
+
+# Class description
+
+You'll rarely see me as I will often go on adventures midway through the semester instead. When I am around, I'll climb out of my office window to avoid you. Here's an A.
