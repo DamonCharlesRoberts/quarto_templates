@@ -281,7 +281,7 @@
 
 \if@biblatex
   \RequirePackage{csquotes}
-  \RequirePackage[natbib,style=apa,backend=biber,sorting=nyt]{biblatex}
+  \RequirePackage[natbib,style=apa,backend=biber,sorting=nyt,annotation=false]{biblatex}
 \else
   \RequirePackage{natbib}
   \bibliographystyle{chicago-apsr}
