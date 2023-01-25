@@ -54,8 +54,7 @@
 \RequirePackage[framemethod=tikz]{mdframed}
 
 %% Sets page size and margins
-\RequirePackage[letterpaper,top=1.8cm,bottom=2.2cm,left=2.1cm,right=2.5cm,columnsep=0.65cm,footskip=2.5\baselineskip,headsep=1.5\baselineskip]{geometry}
-
+\RequirePackage[letterpaper,top=1.8cm,bottom=2.2cm,left=1.9cm,right=1.9cm,columnsep=0.65cm,footskip=2.5\baselineskip,headsep=1.5\baselineskip]{geometry}
 
 %% Front matters
 \def\@authorlist{}

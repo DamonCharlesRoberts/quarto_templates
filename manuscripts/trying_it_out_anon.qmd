@@ -21,6 +21,10 @@ format:
 #bibliography:
 thanks: |
   Thank you APSR folks!
+params:
+  windows: true
+  running: true
+  endnotes: true
 ---
 
 # Introduction

@@ -27,8 +27,8 @@
 %%% disable it first while actively editing, and only
 %%% enable it when you're ready to take stock and check
 %%% on your work.
-    \documentclass[biblatex,blind]{apsr_submission}
-\RequirePackage{hyperref}
+        \documentclass[biblatex,blind]{C:/Users/damon/Dropbox/templates/manuscripts/apsr_submission}
+    \RequirePackage{hyperref}
 \hypersetup{
     colorlinks,
     linkcolor={blue!50!blue},
@@ -40,8 +40,7 @@
 
 %% Example alternative options with everything the opposite of the above: (DO NOT USE AUTOWC WITH BIBLATEX; the word count will be greatly over-reported)
 % \documentclass[biblatex,nonblind,singlespace,twocolumn]{apsr_submission}
-
-\title{APSR Template in Quarto}
+	\title{APSR Template in Quarto}
 
 % Journal name
 \def\@journalname{}
@@ -69,9 +68,8 @@
 \thanks{Thank you APSR folks!}
 
 %% These are used for the headers
-\runningtitle{}
-%\runningauthor{Damon C. Roberts} % 4 + Authors, Author One et al. 
-
+	\runningtitle{}
+	\runningauthor{}
 %% Useful packages
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -79,10 +77,34 @@
 
 %% If you are using a custom figure or table environment from a package and it's not getting framed, add \makeframedenv{MyFigure} in the preamble, where the custom figure environment is \begin{MyFigure}...\end{MyFigure}.
 %% Currently table, table*, figure, figure*, longtable, supertabular, sidewaystable and sidewaysfigure will be automatically framed.
+\usepackage{booktabs}
+\usepackage{siunitx}
+\newcolumntype{d}{S[input-symbols = ()]}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
 
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
 %% Handy for setting wide tables/figures in landscape
 \usepackage{pdflscape}
 
+%% If need to use endnotes instead of footnotes
+	\usepackage{endnotes}
+	\let\footnote=\endnote
 %% Recent LaTeX distributions should be able to automatically convert .eps to .pdf; but if this isn't happening, try loading the epstopdf package manually
 % \usepackage{epstopdf}
 
@@ -100,6 +122,8 @@
     This is an adjustment to the APSR template to work in Quarto.
 \end{abstract}
 \end{frontmatter}
+\setcounter{page}{0}
+\thispagestyle{empty}
 %%% DO NOT REMOVE THIS LINE. For automatic word count.
 %TC:endignore
 \newpage
@@ -121,5 +145,8 @@ file for use in Quarto.
 %% Use \printbibliography if using BibLaTeX
 \newpage
 \printbibliography
+%% add notes page if endnotes
+\newpage
+\theendnotes
 
 \end{document}

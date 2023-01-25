@@ -28,13 +28,13 @@
 %%% enable it when you're ready to take stock and check
 %%% on your work.
 $if(nonblind)$
-    $if(params.os)$
+    $if(params.windows)$
     \documentclass[biblatex,$nonblind$]{C:/Users/damon/Dropbox/templates/manuscripts/apsr_submission}
     $else$
     \documentclass[biblatex,$nonblind$]{/home/damoncroberts/Dropbox/templates/manuscripts/apsr_submission}
     $endif$
 $else$
-    $if(params.os)$
+    $if(params.windows)$
     \documentclass[biblatex,$nonblind$]{C:/Users/damon/Dropbox/templates/manuscripts/apsr_submission}
     $else$
     \documentclass[biblatex]{/home/damoncroberts/Dropbox/templates/manuscripts/apsr_submission}
@@ -52,8 +52,11 @@ $endif$
 
 %% Example alternative options with everything the opposite of the above: (DO NOT USE AUTOWC WITH BIBLATEX; the word count will be greatly over-reported)
 % \documentclass[biblatex,nonblind,singlespace,twocolumn]{apsr_submission}
-
-\title{$if(title)$$title$$endif$}
+$if(params.prereg)$
+	\title{Pre-registered Report:$if(title)$$title$$endif$}
+$else$
+	\title{$if(title)$$title$$endif$}
+$endif$
 
 % Journal name
 \def\@journalname{$if(journalname)$$journalname$$endif$}
@@ -83,9 +86,13 @@ $endfor$
 \thanks{$if(thanks)$$thanks$$endif$}
 
 %% These are used for the headers
-\runningtitle{$if(short-title)$$short-title$$endif$}
-%\runningauthor{$author$} % 4 + Authors, Author One et al. 
-
+$if(params.running.true)$
+	\runningtitle{$if(short-title)$$short-title$$endif$}
+	\runningauthor{$author$} % 4 + Authors, Author One et al. 
+$else$
+	\runningtitle{}
+	\runningauthor{}
+$endif$
 %% Useful packages
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -118,6 +125,13 @@ $endfor$
 %% Handy for setting wide tables/figures in landscape
 \usepackage{pdflscape}
 
+%% If need to use endnotes instead of footnotes
+$if(params.endnotes)$
+	\usepackage{endnotes}
+	\let\footnote=\endnote
+$else$
+
+$endif$
 %% Recent LaTeX distributions should be able to automatically convert .eps to .pdf; but if this isn't happening, try loading the epstopdf package manually
 % \usepackage{epstopdf}
 
@@ -135,6 +149,8 @@ $endfor$
     $abstract$
 \end{abstract}
 \end{frontmatter}
+\setcounter{page}{0}
+\thispagestyle{empty}
 %%% DO NOT REMOVE THIS LINE. For automatic word count.
 %TC:endignore
 \newpage
@@ -152,5 +168,10 @@ $body$
 %% Use \printbibliography if using BibLaTeX
 \newpage
 \printbibliography
+%% add notes page if endnotes
+$if(params.endnotes)$
+\newpage
+\theendnotes
+$endif$
 
 \end{document}

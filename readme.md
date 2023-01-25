@@ -50,6 +50,13 @@
     - blind
     - nonblind
   - abstract
+  - params: Extra parameters
+    - windows(bool) : true | false
+      - are you using Windows or not? helps with path management or if you need parallelization
+    - running(bool): true | false
+      - if you want to remove the running title
+    - endnotes(bool): true | false
+      - if you want to use endnotes instead of footnotes
 - CV
   - name
   - address
