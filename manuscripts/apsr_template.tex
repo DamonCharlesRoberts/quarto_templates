@@ -27,6 +27,9 @@
 %%% disable it first while actively editing, and only
 %%% enable it when you're ready to take stock and check
 %%% on your work.
+
+% Set document class
+%% Depends on option to nonblind and to params.windows
 $if(nonblind)$
     $if(params.windows)$
     \documentclass[biblatex,$nonblind$]{C:/Users/damon/Dropbox/templates/manuscripts/apsr_submission}
@@ -40,25 +43,15 @@ $else$
     \documentclass[biblatex]{/home/damoncroberts/Dropbox/templates/manuscripts/apsr_submission}
     $endif$
 $endif$
-\RequirePackage{hyperref}
-\hypersetup{
-    colorlinks,
-    linkcolor={blue!50!blue},
-    citecolor={blue!50!blue},
-    urlcolor={blue!50!blue}
-}
-\RequirePackage{orcidlink}
-% \totalwordcount{500}
 
-%% Example alternative options with everything the opposite of the above: (DO NOT USE AUTOWC WITH BIBLATEX; the word count will be greatly over-reported)
-% \documentclass[biblatex,nonblind,singlespace,twocolumn]{apsr_submission}
+% If pre-registered report change the title
 $if(params.prereg)$
 	\title{Pre-registered Report:$if(title)$$title$$endif$}
 $else$
 	\title{$if(title)$$title$$endif$}
 $endif$
 
-% Journal name
+% If Journal name provided, add it
 \def\@journalname{$if(journalname)$$journalname$$endif$}
 
 % The custom \author command takes THREE arguments:
@@ -70,34 +63,34 @@ $for(by-author)$
         {$for(it.affiliations)$$it.name$$endfor$}
         {$if(it.attributes.corresponding)${Corresponding author. Email: \url{$it.email$} \\}$endif$$if(repo)${Replication materials: \url{$repo$}}$endif$}
 $endfor$
-%\author{Author One}
-%       {Affiliation A}
-%       {Author One is PhD Candidate, ABC Department, Affiliation A, 12345 NY. (a.1@example.edu)}
-%       
-%\author{Author Two}
-%       {Affiliation C}
-%       {Author Two is Assistant Professor, Faculty of Z, Affiliation B, 42813. Corresponding Author (a.2@acme.edu) Additional notes about Author Two.}
-%       
-%\author{Author Three}
-%       {Affiliation B}
-%       {Author Three is ...}
 
 %% Any other acknowledgements or author notes
 \thanks{$if(thanks)$$thanks$$endif$}
 
-%% These are used for the headers
-$if(params.running.true)$
+% Headers
+%% include a running title and running author if option provided
+$if(params.running)$
 	\runningtitle{$if(short-title)$$short-title$$endif$}
 	\runningauthor{$author$} % 4 + Authors, Author One et al. 
 $else$
 	\runningtitle{}
 	\runningauthor{}
 $endif$
+
 %% Useful packages
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{rotating}
-
+%% References
+\RequirePackage{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={blue!50!blue},
+    citecolor={blue!50!blue},
+    urlcolor={blue!50!blue}
+}
+%% display author orcidlink if provided
+\RequirePackage{orcidlink}
 %% If you are using a custom figure or table environment from a package and it's not getting framed, add \makeframedenv{MyFigure} in the preamble, where the custom figure environment is \begin{MyFigure}...\end{MyFigure}.
 %% Currently table, table*, figure, figure*, longtable, supertabular, sidewaystable and sidewaysfigure will be automatically framed.
 \usepackage{booktabs}
@@ -129,16 +122,9 @@ $endif$
 $if(params.endnotes)$
 	\usepackage{endnotes}
 	\let\footnote=\endnote
-$else$
-
 $endif$
-%% Recent LaTeX distributions should be able to automatically convert .eps to .pdf; but if this isn't happening, try loading the epstopdf package manually
-% \usepackage{epstopdf}
 
-%% Just to add some dummy text
-\usepackage{lipsum}
-
-%%% Use \addbibresource{...} if using BibLaTeX
+% Use \addbibresource{...} if using BibLaTeX
 \addbibresource{$if(bibliography)$$bibliography$$endif$}
 
 \begin{document}
@@ -158,13 +144,6 @@ $endif$
 
 $body$
 
-%% Use \bibliography{...} if using BibTeX
-%\bibliography{$if(bibliography)$$bibliography$$endif$}
-
-%TC:subst \printbibliography \bibliography
-%TC:macro \field [0,1]
-%TC:macro \name [0,0,0,1]
-%TC:macro \list [0,0,1]
 %% Use \printbibliography if using BibLaTeX
 \newpage
 \printbibliography
